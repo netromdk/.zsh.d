@@ -1,0 +1,2 @@
+# Ignore the custom file because it shouldn't be under revision control.
+custom.zsh
