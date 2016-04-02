@@ -20,6 +20,10 @@ alias k='k -h' # Force human-readable sizes.
 # corresponding decompressor programs.
 antigen bundle extract
 
+# Will show a tip for an alias when entering a full command, if available.
+# For instance, using "ls -lh" will show "Alias tip: ll".
+antigen bundle djui/alias-tips
+
 # OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
   # Gives the following commands:
