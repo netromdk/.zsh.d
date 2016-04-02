@@ -5,7 +5,9 @@ antigen use oh-my-zsh
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
+
 antigen bundle zsh-users/zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=4" # Blue color.
 
 antigen bundle command-not-found
 antigen bundle sudo # ESC-ESC puts sudo in front of last cmd.
