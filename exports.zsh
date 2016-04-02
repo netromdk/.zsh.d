@@ -1,0 +1,10 @@
+export NOBEEP=YES
+export CLICOLOR=YES
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export TZ="Europe/Copenhagen"
+export EDITOR=emacs
+export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
+export MANPATH=/opt/local/share/man:$MANPATH
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:~/pkgconfig

@@ -1,0 +1,10 @@
+alias l='ls -lh -G -F'
+alias ls='ls -G -F'
+
+alias h='history'
+alias emacs='emacs -nw'
+alias gdb='gdb -q'
+alias tunnel='ssh -N -f -q'
+alias ...='cd ..; cd ..'
+alias ....='cd ..; cd ..; cd ..'
+alias .....='cd ..; cd ..; cd ..; cd ..'
