@@ -40,6 +40,4 @@ if [[ $CURRENT_OS == 'OS X' ]]; then
   antigen bundle osx
 fi
 
-antigen theme blinks
-
 antigen apply
