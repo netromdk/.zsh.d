@@ -23,10 +23,19 @@ function _build {
     return
   fi
 
-  if [ ! ${BUILDER} = "ctest" ]; then
-    ${BUILDER} -C "${BUILDFOLDER}/${SUBFOLDER}" $@
+  EXTRA_ARGS=""
+
+  # It found the build folder so instruct clang-tidy to use it directly.
+  if [ ${BUILDER} = "clang-tidy" ]; then
+    EXTRA_ARGS="-p=."
+  fi
+
+  if [ ! ${BUILDER} = "ctest" ] && [ ! ${BUILDER} = "clang-tidy" ]; then
+    echo "${BUILDER} ${EXTRA_ARGS} -C \"${BUILDFOLDER}/${SUBFOLDER}\" $@"
+    ${BUILDER} ${EXTRA_ARGS} -C "${BUILDFOLDER}/${SUBFOLDER}" $@
   else
-    cd "${BUILDFOLDER}/${SUBFOLDER}" && ${BUILDER} $@
+    echo "cd \"${BUILDFOLDER}/${SUBFOLDER}\" && ${BUILDER} ${EXTRA_ARGS} $@"
+    cd "${BUILDFOLDER}/${SUBFOLDER}" && ${BUILDER} ${EXTRA_ARGS} $@
   fi
 }
 
@@ -40,4 +49,8 @@ function makebuild {
 
 function ctestbuild {
   _build ctest $@
+}
+
+function clangtidy {
+  _build clang-tidy $@
 }
